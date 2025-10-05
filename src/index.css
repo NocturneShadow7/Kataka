@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Responsive table improvements */
+  table {
+    @apply min-w-full;
+  }
+
+  /* Mobile-friendly scrolling */
+  @media (max-width: 640px) {
+    table {
+      @apply text-xs;
+    }
+
+    th, td {
+      @apply px-2 py-1.5 text-xs;
+    }
+
+    button {
+      @apply text-xs;
+    }
+
+    input, select, textarea {
+      @apply text-sm;
+    }
+  }
+
+  /* Ensure body doesn't overflow horizontally */
+  html, body {
+    @apply overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar for horizontal tables */
+  .table-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(55, 65, 81) rgb(17, 24, 39);
+  }
+
+  .table-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .table-scroll::-webkit-scrollbar-track {
+    background: rgb(17, 24, 39);
+  }
+
+  .table-scroll::-webkit-scrollbar-thumb {
+    background: rgb(55, 65, 81);
+    border-radius: 4px;
+  }
+
+  .table-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgb(75, 85, 99);
+  }
+}
